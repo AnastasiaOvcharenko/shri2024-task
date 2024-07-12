@@ -1,752 +1,624 @@
 function _extends() {
-  return (
-    (_extends = Object.assign
-      ? Object.assign.bind()
-      : function (n) {
-          for (var e = 1; e < arguments.length; e++) {
-            var t = arguments[e];
-            for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
-          }
-          return n;
-        }),
-    _extends.apply(null, arguments)
-  );
+  return (_extends = Object.assign
+    ? Object.assign.bind()
+    : function (e) {
+        for (var t = 1; t < arguments.length; t++) {
+          var u = arguments[t];
+          for (var $ in u) ({}).hasOwnProperty.call(u, $) && (e[$] = u[$]);
+        }
+        return e;
+      }).apply(null, arguments);
 }
-function _toConsumableArray(r) {
+function _toConsumableArray(e) {
   return (
-    _arrayWithoutHoles(r) ||
-    _iterableToArray(r) ||
-    _unsupportedIterableToArray(r) ||
+    _arrayWithoutHoles(e) ||
+    _iterableToArray(e) ||
+    _unsupportedIterableToArray(e) ||
     _nonIterableSpread()
   );
 }
 function _nonIterableSpread() {
-  throw new TypeError(
+  throw TypeError(
     "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
   );
 }
-function _iterableToArray(r) {
+function _iterableToArray(e) {
   if (
-    ("undefined" != typeof Symbol && null != r[Symbol.iterator]) ||
-    null != r["@@iterator"]
+    ("undefined" != typeof Symbol && null != e[Symbol.iterator]) ||
+    null != e["@@iterator"]
   )
-    return Array.from(r);
+    return Array.from(e);
 }
-function _arrayWithoutHoles(r) {
-  if (Array.isArray(r)) return _arrayLikeToArray(r);
+function _arrayWithoutHoles(e) {
+  if (Array.isArray(e)) return _arrayLikeToArray(e);
 }
-function _slicedToArray(r, e) {
+function _slicedToArray(e, t) {
   return (
-    _arrayWithHoles(r) ||
-    _iterableToArrayLimit(r, e) ||
-    _unsupportedIterableToArray(r, e) ||
+    _arrayWithHoles(e) ||
+    _iterableToArrayLimit(e, t) ||
+    _unsupportedIterableToArray(e, t) ||
     _nonIterableRest()
   );
 }
 function _nonIterableRest() {
-  throw new TypeError(
+  throw TypeError(
     "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
   );
 }
-function _unsupportedIterableToArray(r, a) {
-  if (r) {
-    if ("string" == typeof r) return _arrayLikeToArray(r, a);
-    var t = {}.toString.call(r).slice(8, -1);
+function _unsupportedIterableToArray(e, t) {
+  if (e) {
+    if ("string" == typeof e) return _arrayLikeToArray(e, t);
+    var u = {}.toString.call(e).slice(8, -1);
     return (
-      "Object" === t && r.constructor && (t = r.constructor.name),
-      "Map" === t || "Set" === t
-        ? Array.from(r)
-        : "Arguments" === t ||
-          /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-        ? _arrayLikeToArray(r, a)
+      "Object" === u && e.constructor && (u = e.constructor.name),
+      "Map" === u || "Set" === u
+        ? Array.from(e)
+        : "Arguments" === u ||
+          /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(u)
+        ? _arrayLikeToArray(e, t)
         : void 0
     );
   }
 }
-function _arrayLikeToArray(r, a) {
-  (null == a || a > r.length) && (a = r.length);
-  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
-  return n;
+function _arrayLikeToArray(e, t) {
+  (null == t || t > e.length) && (t = e.length);
+  for (var u = 0, $ = Array(t); u < t; u++) $[u] = e[u];
+  return $;
 }
-function _iterableToArrayLimit(r, l) {
-  var t =
-    null == r
+function _iterableToArrayLimit(e, t) {
+  var u =
+    null == e
       ? null
-      : ("undefined" != typeof Symbol && r[Symbol.iterator]) || r["@@iterator"];
-  if (null != t) {
-    var e,
+      : ("undefined" != typeof Symbol && e[Symbol.iterator]) || e["@@iterator"];
+  if (null != u) {
+    var $,
+      a,
+      l,
       n,
-      i,
-      u,
-      a = [],
-      f = !0,
+      r = [],
+      c = !0,
       o = !1;
     try {
-      if (((i = (t = t.call(r)).next), 0 === l)) {
-        if (Object(t) !== t) return;
-        f = !1;
+      if (((l = (u = u.call(e)).next), 0 === t)) {
+        if (Object(u) !== u) return;
+        c = !1;
       } else
         for (
           ;
-          !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l);
-          f = !0
+          !(c = ($ = l.call(u)).done) && (r.push($.value), r.length !== t);
+          c = !0
         );
-    } catch (r) {
-      (o = !0), (n = r);
+    } catch (s) {
+      (o = !0), (a = s);
     } finally {
       try {
-        if (!f && null != t.return && ((u = t.return()), Object(u) !== u))
+        if (!c && null != u.return && ((n = u.return()), Object(n) !== n))
           return;
       } finally {
-        if (o) throw n;
+        if (o) throw a;
       }
     }
-    return a;
+    return r;
   }
 }
-function _arrayWithHoles(r) {
-  if (Array.isArray(r)) return r;
+function _arrayWithHoles(e) {
+  if (Array.isArray(e)) return e;
 }
 function Header() {
-  var _React$useState = React.useState(false),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    expanded = _React$useState2[0],
-    setExpanded = _React$useState2[1];
-  var _React$useState3 = React.useState(false),
-    _React$useState4 = _slicedToArray(_React$useState3, 2),
-    toggled = _React$useState4[0],
-    setToggled = _React$useState4[1];
-  var onClick = function onClick() {
-    if (!toggled) {
-      setToggled(true);
-    }
-    setExpanded(!expanded);
-  };
-  return /*#__PURE__*/ React.createElement(
+  var e = _slicedToArray(React.useState(!1), 2),
+    t = e[0],
+    u = e[1],
+    $ = _slicedToArray(React.useState(!1), 2),
+    a = $[0],
+    l = $[1],
+    n = function e() {
+      a || l(!0), u(!t);
+    };
+  return React.createElement(
     "header",
-    {
-      className: "header",
-    },
-    /*#__PURE__*/ React.createElement("a", {
+    { className: "header" },
+    React.createElement("a", {
       href: "/",
       className: "header__logo",
-      "aria-label": "\u042F\u043D\u0434\u0435\u043A\u0441.\u0414\u043E\u043C",
+      "aria-label": "Яндекс.Дом",
     }),
-    /*#__PURE__*/ React.createElement(
+    React.createElement(
       "button",
       {
         className: "header__menu",
-        "aria-expanded": expanded ? "true" : "false",
-        onClick: onClick,
+        "aria-expanded": t ? "true" : "false",
+        onClick: n,
       },
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "span",
-        {
-          className: "header__menu-text a11y-hidden",
-        },
-        expanded ? "Закрыть меню" : "Открыть меню"
+        { className: "header__menu-text a11y-hidden" },
+        t ? "Закрыть меню" : "Открыть меню"
       )
     ),
-    /*#__PURE__*/ React.createElement(
+    React.createElement(
       "ul",
       {
         className:
           "header__links" +
-          (expanded ? " header__links_opened" : "") +
-          (toggled ? " header__links-toggled" : ""),
+          (t ? " header__links_opened" : "") +
+          (a ? " header__links-toggled" : ""),
       },
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "li",
-        {
-          className: "header__item",
-        },
-        /*#__PURE__*/ React.createElement(
+        { className: "header__item" },
+        React.createElement(
           "a",
           {
             className: "header__link header__link_current",
             href: "/",
             "aria-current": "page",
           },
-          "\u0421\u0432\u043E\u0434\u043A\u0430"
+          "Сводка"
         )
       ),
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "li",
-        {
-          className: "header__item",
-        },
-        /*#__PURE__*/ React.createElement(
+        { className: "header__item" },
+        React.createElement(
           "a",
-          {
-            className: "header__link",
-            href: "/devices",
-          },
-          "\u0423\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430"
+          { className: "header__link", href: "/devices" },
+          "Устройства"
         )
       ),
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "li",
-        {
-          className: "header__item",
-        },
-        /*#__PURE__*/ React.createElement(
+        { className: "header__item" },
+        React.createElement(
           "a",
-          {
-            className: "header__link",
-            href: "/scripts",
-          },
-          "\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0438"
+          { className: "header__link", href: "/scripts" },
+          "Сценарии"
         )
       )
     )
   );
 }
-function Event(props) {
-  var ref = React.useRef();
-  var onSize = props.onSize;
-  React.useEffect(function () {
-    var width = ref.current.offsetWidth;
-    var height = ref.current.offsetHeight;
-    if (onSize) {
-      onSize({
-        width: width,
-        height: height,
-      });
-    }
-  });
-  return /*#__PURE__*/ React.createElement(
-    "li",
-    {
-      ref: ref,
-      className: "event" + (props.slim ? " event_slim" : ""),
-    },
-    /*#__PURE__*/ React.createElement(
-      "button",
-      {
-        className: "event__button",
-      },
-      /*#__PURE__*/ React.createElement("span", {
-        className: "event__icon event__icon_".concat(props.icon),
-        role: "img",
-        "aria-label": props.iconLabel,
-      }),
-      /*#__PURE__*/ React.createElement(
-        "h4",
-        {
-          className: "event__title",
-        },
-        props.title
-      ),
-      props.subtitle &&
-        /*#__PURE__*/ React.createElement(
-          "span",
-          {
-            className: "event__subtitle",
-          },
-          props.subtitle
-        )
+function Event(e) {
+  var t = React.useRef(),
+    u = e.onSize;
+  return (
+    React.useEffect(function () {
+      var e = t.current.offsetWidth,
+        $ = t.current.offsetHeight;
+      u && u({ width: e, height: $ });
+    }),
+    React.createElement(
+      "li",
+      { ref: t, className: "event" + (e.slim ? " event_slim" : "") },
+      React.createElement(
+        "button",
+        { className: "event__button" },
+        React.createElement("span", {
+          className: "event__icon event__icon_".concat(e.icon),
+          role: "img",
+          "aria-label": e.iconLabel,
+        }),
+        React.createElement("h4", { className: "event__title" }, e.title),
+        e.subtitle &&
+          React.createElement(
+            "span",
+            { className: "event__subtitle" },
+            e.subtitle
+          )
+      )
     )
   );
 }
-var TABS = {
-  all: {
-    title: "Все",
-    items: [
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Yeelight LED Smart Bulb",
-        subtitle: "Включено",
+for (
+  var TABS = {
+      all: {
+        title: "Все",
+        items: [
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Yeelight LED Smart Bulb",
+            subtitle: "Включено",
+          },
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "D-Link Omna 180 Cam",
+            subtitle: "Включится в 17:00",
+          },
+          {
+            icon: "temp",
+            iconLabel: "Температура",
+            title: "Elgato Eve Degree Connected",
+            subtitle: "Выключено до 17:00",
+          },
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "LIFX Mini Day & Dusk A60 E27",
+            subtitle: "Включится в 17:00",
+          },
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Mi Air Purifier 2S",
+            subtitle: "Включено",
+          },
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "Philips Zhirui",
+            subtitle: "Включено",
+          },
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "Philips Zhirui",
+            subtitle: "Включено",
+          },
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Mi Air Purifier 2S",
+            subtitle: "Включено",
+          },
+        ],
       },
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "D-Link Omna 180 Cam",
-        subtitle: "Включится в 17:00",
+      kitchen: {
+        title: "Кухня",
+        items: [
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Yeelight LED Smart Bulb",
+            subtitle: "Включено",
+          },
+          {
+            icon: "temp",
+            iconLabel: "Температура",
+            title: "Elgato Eve Degree Connected",
+            subtitle: "Выключено до 17:00",
+          },
+        ],
       },
-      {
-        icon: "temp",
-        iconLabel: "Температура",
-        title: "Elgato Eve Degree Connected",
-        subtitle: "Выключено до 17:00",
+      hall: {
+        title: "Зал",
+        items: [
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "Philips Zhirui",
+            subtitle: "Выключено",
+          },
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Mi Air Purifier 2S",
+            subtitle: "Выключено",
+          },
+        ],
       },
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "LIFX Mini Day & Dusk A60 E27",
-        subtitle: "Включится в 17:00",
+      lights: {
+        title: "Лампочки",
+        items: [
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "D-Link Omna 180 Cam",
+            subtitle: "Включится в 17:00",
+          },
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "LIFX Mini Day & Dusk A60 E27",
+            subtitle: "Включится в 17:00",
+          },
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Mi Air Purifier 2S",
+            subtitle: "Включено",
+          },
+          {
+            icon: "light",
+            iconLabel: "Освещение",
+            title: "Philips Zhirui",
+            subtitle: "Включено",
+          },
+        ],
       },
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Mi Air Purifier 2S",
-        subtitle: "Включено",
+      cameras: {
+        title: "Камеры",
+        items: [
+          {
+            icon: "light2",
+            iconLabel: "Освещение",
+            title: "Xiaomi Mi Air Purifier 2S",
+            subtitle: "Включено",
+          },
+        ],
       },
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "Philips Zhirui",
-        subtitle: "Включено",
-      },
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "Philips Zhirui",
-        subtitle: "Включено",
-      },
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Mi Air Purifier 2S",
-        subtitle: "Включено",
-      },
-    ],
-  },
-  kitchen: {
-    title: "Кухня",
-    items: [
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Yeelight LED Smart Bulb",
-        subtitle: "Включено",
-      },
-      {
-        icon: "temp",
-        iconLabel: "Температура",
-        title: "Elgato Eve Degree Connected",
-        subtitle: "Выключено до 17:00",
-      },
-    ],
-  },
-  hall: {
-    title: "Зал",
-    items: [
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "Philips Zhirui",
-        subtitle: "Выключено",
-      },
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Mi Air Purifier 2S",
-        subtitle: "Выключено",
-      },
-    ],
-  },
-  lights: {
-    title: "Лампочки",
-    items: [
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "D-Link Omna 180 Cam",
-        subtitle: "Включится в 17:00",
-      },
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "LIFX Mini Day & Dusk A60 E27",
-        subtitle: "Включится в 17:00",
-      },
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Mi Air Purifier 2S",
-        subtitle: "Включено",
-      },
-      {
-        icon: "light",
-        iconLabel: "Освещение",
-        title: "Philips Zhirui",
-        subtitle: "Включено",
-      },
-    ],
-  },
-  cameras: {
-    title: "Камеры",
-    items: [
-      {
-        icon: "light2",
-        iconLabel: "Освещение",
-        title: "Xiaomi Mi Air Purifier 2S",
-        subtitle: "Включено",
-      },
-    ],
-  },
-};
-for (var i = 0; i < 6; ++i) {
+    },
+    i = 0;
+  i < 6;
+  ++i
+)
   TABS.all.items = [].concat(
     _toConsumableArray(TABS.all.items),
     _toConsumableArray(TABS.all.items)
   );
-}
 var TABS_KEYS = Object.keys(TABS);
 function Main() {
-  var ref = React.useRef();
-  var initedRef = React.useRef(false);
-  var _React$useState5 = React.useState(""),
-    _React$useState6 = _slicedToArray(_React$useState5, 2),
-    activeTab = _React$useState6[0],
-    setActiveTab = _React$useState6[1];
-  var _React$useState7 = React.useState(false),
-    _React$useState8 = _slicedToArray(_React$useState7, 2),
-    hasRightScroll = _React$useState8[0],
-    setHasRightScroll = _React$useState8[1];
+  var e = React.useRef(),
+    t = React.useRef(!1),
+    u = _slicedToArray(React.useState(""), 2),
+    $ = u[0],
+    a = u[1],
+    l = _slicedToArray(React.useState(!1), 2),
+    n = l[0],
+    r = l[1];
   React.useEffect(function () {
-    if (!activeTab && !initedRef.current) {
-      initedRef.current = true;
-      setActiveTab(new URLSearchParams(location.search).get("tab") || "all");
-    }
+    $ ||
+      t.current ||
+      ((t.current = !0),
+      a(new URLSearchParams(location.search).get("tab") || "all"));
   });
-  var onSelectInput = function onSelectInput(event) {
-    setActiveTab(event.target.value);
-  };
-  var sizes = [];
-  var onSize = function onSize(size) {
-    sizes = [].concat(_toConsumableArray(sizes), [size]);
-  };
+  var c = function e(t) {
+      a(t.target.value);
+    },
+    o = [],
+    s = function e(t) {
+      o = [].concat(_toConsumableArray(o), [t]);
+    };
   React.useEffect(function () {
-    var sumWidth = sizes.reduce(function (acc, item) {
-      return acc + item.width;
+    var t = o.reduce(function (e, t) {
+      return e + t.width;
     }, 0);
-    var sumHeight = sizes.reduce(function (acc, item) {
-      return acc + item.height;
+    o.reduce(function (e, t) {
+      return e + t.height;
     }, 0);
-    var newHasRightScroll = sumWidth > ref.current.offsetWidth;
-    if (newHasRightScroll !== hasRightScroll) {
-      setHasRightScroll(newHasRightScroll);
-    }
+    var u = t > e.current.offsetWidth;
+    u !== n && r(u);
   });
-  var onArrowCLick = function onArrowCLick() {
-    var scroller = ref.current.querySelector(
+  var m = function t() {
+    var u = e.current.querySelector(
       ".section__panel:not(.section__panel_hidden)"
     );
-    if (scroller) {
-      scroller.scrollTo({
-        left: scroller.scrollLeft + 400,
-        behavior: "smooth",
-      });
-    }
+    u && u.scrollTo({ left: u.scrollLeft + 400, behavior: "smooth" });
   };
-  return /*#__PURE__*/ React.createElement(
+  return React.createElement(
     "main",
-    {
-      className: "main",
-    },
-    /*#__PURE__*/ React.createElement(
+    { className: "main" },
+    React.createElement(
       "section",
-      {
-        className: "section main__general",
-      },
-      /*#__PURE__*/ React.createElement(
+      { className: "section main__general" },
+      React.createElement(
         "h2",
         {
           className: "section__title section__title-header section__main-title",
         },
-        "\u0413\u043B\u0430\u0432\u043D\u043E\u0435"
+        "Главное"
       ),
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "div",
-        {
-          className: "hero-dashboard",
-        },
-        /*#__PURE__*/ React.createElement(
+        { className: "hero-dashboard" },
+        React.createElement(
           "div",
-          {
-            className: "hero-dashboard__primary",
-          },
-          /*#__PURE__*/ React.createElement(
+          { className: "hero-dashboard__primary" },
+          React.createElement(
             "h3",
-            {
-              className: "hero-dashboard__title",
-            },
-            "\u041F\u0440\u0438\u0432\u0435\u0442, \u0413\u0435\u043D\u043D\u0430\u0434\u0438\u0439!"
+            { className: "hero-dashboard__title" },
+            "Привет, Геннадий!"
           ),
-          /*#__PURE__*/ React.createElement(
+          React.createElement(
             "p",
-            {
-              className: "hero-dashboard__subtitle",
-            },
-            "\u0414\u0432\u0435\u0440\u0438 \u0438 \u043E\u043A\u043D\u0430 \u0437\u0430\u043A\u0440\u044B\u0442\u044B, \u0441\u0438\u0433\u043D\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u0430."
+            { className: "hero-dashboard__subtitle" },
+            "Двери и окна закрыты, сигнализация включена."
           ),
-          /*#__PURE__*/ React.createElement(
+          React.createElement(
             "ul",
-            {
-              className: "hero-dashboard__info",
-            },
-            /*#__PURE__*/ React.createElement(
+            { className: "hero-dashboard__info" },
+            React.createElement(
               "li",
-              {
-                className: "hero-dashboard__item",
-              },
-              /*#__PURE__*/ React.createElement(
+              { className: "hero-dashboard__item" },
+              React.createElement(
                 "div",
-                {
-                  className: "hero-dashboard__item-title",
-                },
-                "\u0414\u043E\u043C\u0430"
+                { className: "hero-dashboard__item-title" },
+                "Дома"
               ),
-              /*#__PURE__*/ React.createElement(
+              React.createElement(
                 "div",
-                {
-                  className: "hero-dashboard__item-details",
-                },
+                { className: "hero-dashboard__item-details" },
                 "+23",
-                /*#__PURE__*/ React.createElement(
+                React.createElement(
                   "span",
-                  {
-                    className: "a11y-hidden",
-                  },
-                  "\xB0"
+                  { className: "a11y-hidden" },
+                  "\xb0"
                 )
               )
             ),
-            /*#__PURE__*/ React.createElement(
+            React.createElement(
               "li",
-              {
-                className: "hero-dashboard__item",
-              },
-              /*#__PURE__*/ React.createElement(
+              { className: "hero-dashboard__item" },
+              React.createElement(
                 "div",
-                {
-                  className: "hero-dashboard__item-title",
-                },
-                "\u0417\u0430 \u043E\u043A\u043D\u043E\u043C"
+                { className: "hero-dashboard__item-title" },
+                "За окном"
               ),
-              /*#__PURE__*/ React.createElement(
+              React.createElement(
                 "div",
-                {
-                  className: "hero-dashboard__item-details",
-                },
+                { className: "hero-dashboard__item-details" },
                 "+19",
-                /*#__PURE__*/ React.createElement(
+                React.createElement(
                   "span",
-                  {
-                    className: "a11y-hidden",
-                  },
-                  "\xB0"
+                  { className: "a11y-hidden" },
+                  "\xb0"
                 ),
-                /*#__PURE__*/ React.createElement("div", {
+                React.createElement("div", {
                   className: "hero-dashboard__icon hero-dashboard__icon_rain",
                   role: "img",
-                  "aria-label": "\u0414\u043E\u0436\u0434\u044C",
+                  "aria-label": "Дождь",
                 })
               )
             )
           )
         ),
-        /*#__PURE__*/ React.createElement(
+        React.createElement(
           "ul",
-          {
-            className: "hero-dashboard__schedule",
-          },
-          /*#__PURE__*/ React.createElement(Event, {
+          { className: "hero-dashboard__schedule" },
+          React.createElement(Event, {
             icon: "temp",
-            iconLabel:
-              "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            iconLabel: "Температура",
             title: "Philips Cooler",
-            subtitle:
-              "\u041D\u0430\u0447\u043D\u0435\u0442 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u0442\u044C \u0432 16:30",
+            subtitle: "Начнет охлаждать в 16:30",
           }),
-          /*#__PURE__*/ React.createElement(Event, {
+          React.createElement(Event, {
             icon: "light",
-            iconLabel: "\u041E\u0441\u0432\u0435\u0449\u0435\u043D\u0438\u0435",
+            iconLabel: "Освещение",
             title: "Xiaomi Yeelight LED Smart Bulb",
-            subtitle:
-              "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0441\u044F \u0432 17:00",
+            subtitle: "Включится в 17:00",
           }),
-          /*#__PURE__*/ React.createElement(Event, {
+          React.createElement(Event, {
             icon: "light",
-            iconLabel: "\u041E\u0441\u0432\u0435\u0449\u0435\u043D\u0438\u0435",
+            iconLabel: "Освещение",
             title: "Xiaomi Yeelight LED Smart Bulb",
-            subtitle:
-              "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0441\u044F \u0432 17:00",
+            subtitle: "Включится в 17:00",
           })
         )
       )
     ),
-    /*#__PURE__*/ React.createElement(
+    React.createElement(
       "section",
-      {
-        className: "section main__scripts",
-      },
-      /*#__PURE__*/ React.createElement(
+      { className: "section main__scripts" },
+      React.createElement(
         "h2",
-        {
-          className: "section__title section__title-header",
-        },
-        "\u0418\u0437\u0431\u0440\u0430\u043D\u043D\u044B\u0435 \u0441\u0446\u0435\u043D\u0430\u0440\u0438\u0438"
+        { className: "section__title section__title-header" },
+        "Избранные сценарии"
       ),
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "ul",
-        {
-          className: "event-grid",
-        },
-        /*#__PURE__*/ React.createElement(Event, {
-          slim: true,
+        { className: "event-grid" },
+        React.createElement(Event, {
+          slim: !0,
           icon: "light2",
-          iconLabel: "\u041E\u0441\u0432\u0435\u0449\u0435\u043D\u0438\u0435",
-          title:
-            "\u0412\u044B\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0432\u0435\u0441\u044C \u0441\u0432\u0435\u0442 \u0432 \u0434\u043E\u043C\u0435 \u0438 \u0432\u043E \u0434\u0432\u043E\u0440\u0435",
+          iconLabel: "Освещение",
+          title: "Выключить весь свет в доме и во дворе",
         }),
-        /*#__PURE__*/ React.createElement(Event, {
-          slim: true,
+        React.createElement(Event, {
+          slim: !0,
           icon: "schedule",
-          iconLabel:
-            "\u0420\u0430\u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435",
-          title: "\u042F \u0443\u0445\u043E\u0436\u0443",
+          iconLabel: "Расписание",
+          title: "Я ухожу",
         }),
-        /*#__PURE__*/ React.createElement(Event, {
-          slim: true,
+        React.createElement(Event, {
+          slim: !0,
           icon: "light2",
-          iconLabel: "\u041E\u0441\u0432\u0435\u0449\u0435\u043D\u0438\u0435",
-          title:
-            "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0441\u0432\u0435\u0442 \u0432 \u043A\u043E\u0440\u0438\u0434\u043E\u0440\u0435",
+          iconLabel: "Освещение",
+          title: "Включить свет в коридоре",
         }),
-        /*#__PURE__*/ React.createElement(Event, {
-          slim: true,
+        React.createElement(Event, {
+          slim: !0,
           icon: "temp2",
-          iconLabel:
-            "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
-          title:
-            "\u041D\u0430\u0431\u0440\u0430\u0442\u044C \u0433\u043E\u0440\u044F\u0447\u0443\u044E \u0432\u0430\u043D\u043D\u0443",
-          subtitle:
-            "\u041D\u0430\u0447\u043D\u0451\u0442\u0441\u044F \u0432 18:00",
+          iconLabel: "Температура",
+          title: "Набрать горячую ванну",
+          subtitle: "Начнётся в 18:00",
         }),
-        /*#__PURE__*/ React.createElement(Event, {
-          slim: true,
+        React.createElement(Event, {
+          slim: !0,
           icon: "temp2",
-          iconLabel:
-            "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
-          title:
-            "\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u043F\u043E\u043B \u0442\u0451\u043F\u043B\u044B\u043C \u0432\u043E \u0432\u0441\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0435",
+          iconLabel: "Температура",
+          title: "Сделать пол тёплым во всей квартире",
         })
       )
     ),
-    /*#__PURE__*/ React.createElement(
+    React.createElement(
       "section",
-      {
-        className: "section main__devices",
-      },
-      /*#__PURE__*/ React.createElement(
+      { className: "section main__devices" },
+      React.createElement(
         "div",
-        {
-          className: "section__title",
-        },
-        /*#__PURE__*/ React.createElement(
+        { className: "section__title" },
+        React.createElement(
           "h2",
-          {
-            className: "section__title-header",
-          },
-          "\u0418\u0437\u0431\u0440\u0430\u043D\u043D\u044B\u0435 \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430"
+          { className: "section__title-header" },
+          "Избранные устройства"
         ),
-        /*#__PURE__*/ React.createElement(
+        React.createElement(
           "select",
-          {
-            className: "section__select",
-            defaultValue: "all",
-            onInput: onSelectInput,
-          },
-          TABS_KEYS.map(function (key) {
-            return /*#__PURE__*/ React.createElement(
+          { className: "section__select", defaultValue: "all", onInput: c },
+          TABS_KEYS.map(function (e) {
+            return React.createElement(
               "option",
-              {
-                key: key,
-                value: key,
-              },
-              TABS[key].title
+              { key: e, value: e },
+              TABS[e].title
             );
           })
         ),
-        /*#__PURE__*/ React.createElement(
+        React.createElement(
           "ul",
-          {
-            role: "tablist",
-            className: "section__tabs",
-          },
-          TABS_KEYS.map(function (key) {
-            return /*#__PURE__*/ React.createElement(
+          { role: "tablist", className: "section__tabs" },
+          TABS_KEYS.map(function (e) {
+            return React.createElement(
               "li",
               {
-                key: key,
+                key: e,
                 role: "tab",
-                "aria-selected": key === activeTab ? "true" : "false",
-                tabIndex: key === activeTab ? "0" : undefined,
+                "aria-selected": e === $ ? "true" : "false",
+                tabIndex: e === $ ? "0" : void 0,
                 className:
-                  "section__tab" +
-                  (key === activeTab ? " section__tab_active" : ""),
-                id: "tab_".concat(key),
-                "aria-controls": "panel_".concat(key),
-                onClick: function onClick() {
-                  return setActiveTab(key);
+                  "section__tab" + (e === $ ? " section__tab_active" : ""),
+                id: "tab_".concat(e),
+                "aria-controls": "panel_".concat(e),
+                onClick: function t() {
+                  return a(e);
                 },
               },
-              TABS[key].title
+              TABS[e].title
             );
           })
         )
       ),
-      /*#__PURE__*/ React.createElement(
+      React.createElement(
         "div",
-        {
-          className: "section__panel-wrapper",
-          ref: ref,
-        },
-        TABS_KEYS.map(function (key) {
-          return /*#__PURE__*/ React.createElement(
+        { className: "section__panel-wrapper", ref: e },
+        TABS_KEYS.map(function (e) {
+          return React.createElement(
             "div",
             {
-              key: key,
+              key: e,
               role: "tabpanel",
               className:
-                "section__panel" +
-                (key === activeTab ? "" : " section__panel_hidden"),
-              "aria-hidden": key === activeTab ? "false" : "true",
-              id: "panel_".concat(key),
-              "aria-labelledby": "tab_".concat(key),
+                "section__panel" + (e === $ ? "" : " section__panel_hidden"),
+              "aria-hidden": e === $ ? "false" : "true",
+              id: "panel_".concat(e),
+              "aria-labelledby": "tab_".concat(e),
             },
-            /*#__PURE__*/ React.createElement(
+            React.createElement(
               "ul",
-              {
-                className: "section__panel-list",
-              },
-              TABS[key].items.map(function (item, index) {
-                return /*#__PURE__*/ React.createElement(
+              { className: "section__panel-list" },
+              TABS[e].items.map(function (e, t) {
+                return React.createElement(
                   Event,
-                  _extends(
-                    {
-                      key: index,
-                    },
-                    item,
-                    {
-                      onSize: onSize,
-                    }
-                  )
+                  _extends({ key: t }, e, { onSize: s })
                 );
               })
             )
           );
         }),
-        hasRightScroll &&
-          /*#__PURE__*/ React.createElement("div", {
+        n &&
+          React.createElement("div", {
             className: "section__arrow",
-            onClick: onArrowCLick,
+            onClick: m,
           })
       )
     )
   );
 }
 setTimeout(function () {
-  var root = ReactDOM.createRoot(document.getElementById("app"));
-  root.render(
-    /*#__PURE__*/ React.createElement(
+  ReactDOM.createRoot(document.getElementById("app")).render(
+    React.createElement(
       React.Fragment,
       null,
-      /*#__PURE__*/ React.createElement(Header, null),
-      /*#__PURE__*/ React.createElement(Main, null)
+      React.createElement(Header, null),
+      React.createElement(Main, null)
     )
   );
 }, 100);
